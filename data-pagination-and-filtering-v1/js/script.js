@@ -1,3 +1,4 @@
+// showing all items in the page
 function showPage(list, page) {
 	let startIndex = page * 9 - 9;
 	let endIndex = page * 9;
@@ -5,7 +6,6 @@ function showPage(list, page) {
 	studentList.innerHTML = ' ';
 	for (let i = 0; i < list.length; i++) {
 		if (i >= startIndex && i < endIndex) {
-			// why use literal template instead of dom create element
 			let studentItem = `<li class="student-item cf"> 
 			<div class="student-details">
 			  <img class="avatar" src=" ${list[i].picture.medium}" alt="Profile Picture">
@@ -20,19 +20,21 @@ function showPage(list, page) {
 		}
 	}
 }
-
+// adding pageniation to the page
 function addPagination(list) {
+	// getting a number of the page from data array
 	let NumOfPage = Math.ceil(list.length / 9);
 	let linkList = document.querySelector('.link-list');
 	linkList.innerHTML = '';
+	// i = 1 , because page start at 1
 	for (let i = 1; i <= NumOfPage; i++) {
-		// why use literal template instead of dom create element
-
+		// to make element
 		let button = `<li><button type="button">${i}</button></li>`;
 		linkList.insertAdjacentHTML('beforeend', button);
 		let activeButton = document.querySelector('button');
 		activeButton.className = 'active';
 
+		// to make some action
 		linkList.addEventListener('click', (e) => {
 			if (e.target.tagName === 'BUTTON') {
 				let deactiveButton = document.querySelector('.active');
