@@ -47,3 +47,25 @@ function addPagination(list) {
 }
 showPage(data, 1);
 addPagination(data);
+
+// to exceed
+function bar() {
+	let html = `
+<label for="search" class="student-search">
+  <span>Search by name</span>
+  <input id="search" placeholder="Search by name...">
+  <button type="button"><img src="img/icn-search.svg" alt="Search icon"></button>
+</label>
+`;
+	let header = document.querySelector('header');
+	let label = document.querySelector('label');
+	let span = document.querySelector('span');
+	let input = document.getElementById('search');
+	let button = document.querySelector('button');
+
+	header.insertAdjacentHTML('beforeend', html);
+
+	// to make action
+}
+
+bar(data);
