@@ -1,2 +1,2 @@
-# Tech-degree-project
+# Tech-degree-project 2
 FS project 2
